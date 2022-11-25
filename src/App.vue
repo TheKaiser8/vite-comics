@@ -1,6 +1,6 @@
 <script>
 import AppHeader from './components/header/AppHeader.vue';
-import AppMain from './components/AppMain.vue';
+import AppMain from './components/main/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 
 export default {
@@ -13,7 +13,6 @@ export default {
 </script>
 
 <template>
-  <div class="container">
 
     <AppHeader/>
 
@@ -21,7 +20,6 @@ export default {
 
     <AppFooter/>
     
-  </div>
 </template>
 
 <style lang="scss">

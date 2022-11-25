@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-    <header>
+    <header class="container">
         <AppLogo/>
         <NavHeader/>
     </header>
