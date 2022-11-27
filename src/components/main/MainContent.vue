@@ -89,6 +89,7 @@ export default {
 <template>
     <section id="current-series">
         <div class="container">
+            <h2 class="section-title">CURRENT SERIES</h2>
             <div class="items">
                 <CardSquareImg class="item" 
                     v-for="item in comics" 
@@ -104,6 +105,9 @@ export default {
                     <h4 class="img-title">{{item.series.toUpperCase()}}</h4>
                 </div> -->
             </div>
+            <div class="btn-box">
+                <button class="btn btn-primary">LOAD MORE</button>
+            </div>
         </div>
     </section>
 </template>
@@ -111,8 +115,18 @@ export default {
 <style lang="scss" scoped>
 #current-series {
     background-color: var(--first-bg-color);
-    padding: 3rem 0;
+    padding: 3rem 0 1.25rem;
     color: var(--first-text-color);
+    position: relative;
+
+    .section-title {
+        background-color: var(--primary-color);
+        padding: 1rem 1.5rem;
+        display: inline-block;
+        position: absolute;
+        top: -2.0625rem;
+        z-index: 10;
+    }
 
     .items {
         display: flex;
@@ -121,6 +135,21 @@ export default {
         .item {
             width: calc(100% / 6 - 1.75rem);
             margin: .875rem .875rem 3rem;
+        }
+    }
+    .btn-box {
+        text-align: center;
+        .btn {
+            border: none;
+            font-size: inherit;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: inherit;
+            padding: 1rem;
+            width: 15%;
+            font-weight: bold;
         }
     }
 }

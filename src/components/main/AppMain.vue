@@ -1,10 +1,12 @@
 <script>
 import MainContent from './MainContent.vue';
 import MainBanner from './MainBanner.vue';
+import AppJumbotron from './AppJumbotron.vue';
 
 export default {
     name: 'AppMain',
     components: {
+        AppJumbotron,
         MainContent,
         MainBanner
     }
@@ -13,6 +15,7 @@ export default {
 
 <template>
     <main>
+        <AppJumbotron/>
         <MainContent/>
         <MainBanner/>
     </main>
