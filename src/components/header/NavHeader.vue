@@ -8,7 +8,7 @@ export default {
     <nav class="main-nav">
         <ul>
             <li><a href="#">CHARACTERS</a></li>
-            <li><a href="#">COMICS</a></li>
+            <li><a href="#" class="active">COMICS</a></li>
             <li><a href="#">MOVIES</a></li>
             <li><a href="#">TV</a></li>
             <li><a href="#">GAMES</a></li>
@@ -36,8 +36,25 @@ export default {
                 color: currentColor;
                 font-weight: 500;
                 padding: 1rem;
+
+                &.active {
+                    color: var(--primary-color);
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: -55%;
+                        left: 1rem;
+                        width: calc(100% - 2rem);
+                        height: 4px;
+                        background-color: var(--primary-color);
+                    }
+                }
             }
         }
     }
 }
+
 </style>
