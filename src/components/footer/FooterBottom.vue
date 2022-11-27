@@ -1,6 +1,32 @@
 <script>
 export default {
     name: 'FooterBottom',
+    data() {
+        return {
+            socialList: [
+                {
+                    img: 'src/assets/img/footer-facebook.png',
+                    name: 'Logo Facebook'
+                },
+                {
+                    img: 'src/assets/img/footer-twitter.png',
+                    name: 'Logo Twitter'
+                },
+                {
+                    img: 'src/assets/img/footer-youtube.png',
+                    name: 'Logo YouTube'
+                },
+                {
+                    img: 'src/assets/img/footer-pinterest.png',
+                    name: 'Logo Pinterest'
+                },
+                {
+                    img: 'src/assets/img/footer-periscope.png',
+                    name: 'Logo Periscope'
+                }
+            ]
+        }
+    }
 }
 </script>
 
@@ -12,11 +38,9 @@ export default {
             </div>
             <div class="social-box">
                 <strong class="social-box__text">FOLLOW US</strong>
-                <a href="#" @click.prevent><img src="../../assets/img/footer-facebook.png" alt="Logo Facebook"></a>
-                <a href="#" @click.prevent><img src="../../assets/img/footer-twitter.png" alt="Logo Twitter"></a>
-                <a href="#" @click.prevent><img src="../../assets/img/footer-youtube.png" alt="Logo YouTube"></a>
-                <a href="#" @click.prevent><img src="../../assets/img/footer-pinterest.png" alt="Logo Pinterest"></a>
-                <a href="#" @click.prevent><img src="../../assets/img/footer-periscope.png" alt="Logo Periscope"></a>
+                <a href="#" v-for="item in socialList" @click.prevent>
+                    <img :src="item.img" :alt="item.name">
+                </a>
             </div>
         </div>
     </section>
@@ -43,6 +67,11 @@ export default {
             border: .125rem solid var(--primary-color);
             padding: 1rem .875rem;
             color: inherit;
+            transition: transform 0.5s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
         }
         .social-box {
             display: flex;
