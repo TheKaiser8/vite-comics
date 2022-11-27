@@ -1,6 +1,10 @@
 <script>
+import CardSquareImg from '../common/CardSquareImg.vue'
 export default {
     name: 'MainContent',
+    components: {
+        CardSquareImg
+    },
     data() {
         return {
             comics: [
@@ -83,17 +87,41 @@ export default {
 </script>
 
 <template>
-    <section>
+    <section id="current-series">
         <div class="container">
-            <h3>--> Content goes here --> </h3>
+            <div class="items">
+                <CardSquareImg class="item" 
+                    v-for="item in comics" 
+                    :img="item.thumb" 
+                    :title="item.series.toUpperCase()"
+                />
+
+                <!-- SENZA l'utilizzo della componente card e delle props: -->
+                <!-- <div class="item" v-for="item in comics">
+                    <div class="box-square">
+                        <img class="img-square" :src="item.thumb" :alt="item.series">
+                    </div>
+                    <h4 class="img-title">{{item.series.toUpperCase()}}</h4>
+                </div> -->
+            </div>
         </div>
     </section>
 </template>
 
 <style lang="scss" scoped>
-section {
+#current-series {
     background-color: var(--first-bg-color);
     padding: 3rem 0;
     color: var(--first-text-color);
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+
+        .item {
+            width: calc(100% / 6 - 1.75rem);
+            margin: .875rem .875rem 3rem;
+        }
+    }
 }
 </style>
