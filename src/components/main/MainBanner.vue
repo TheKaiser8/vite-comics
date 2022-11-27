@@ -1,31 +1,41 @@
 <script>
 export default {
     name: 'MainBanner',
+    data() {
+        return {
+            bannerList: [
+                {
+                    img: 'src/assets/img/buy-comics-digital-comics.png',
+                    title: 'DIGITAL COMICS'
+                },
+                {
+                    img: 'src/assets/img/buy-comics-merchandise.png',
+                    title: 'DC MERCHANDISE'
+                },
+                {
+                    img: 'src/assets/img/buy-comics-subscriptions.png',
+                    title: 'SUBSCRIPTION'
+                },
+                {
+                    img: 'src/assets/img/buy-comics-shop-locator.png',
+                    title: 'COMIC SHOP LOCATOR'
+                },
+                {
+                    img: 'src/assets/img/buy-dc-power-visa.svg',
+                    title: 'DC POWER VISA'
+                }
+            ]
+        }
+    }
 }
 </script>
 
 <template>
     <section id="main-banner">
         <div class="container">
-            <div class="card-icon">
-                <img class="img-icon" src="../../assets/img/buy-comics-digital-comics.png" alt="Digital Comics">
-                <span>DIGITAL COMICS</span>
-            </div>
-            <div class="card-icon">
-                <img class="img-icon" src="../../assets/img/buy-comics-merchandise.png" alt="DC Merchandise">
-                <span>DC MERCHANDISE</span>
-            </div>
-            <div class="card-icon">
-                <img class="img-icon" src="../../assets/img/buy-comics-subscriptions.png" alt="Subscription">
-                <span>SUBSCRIPTION</span>
-            </div>
-            <div class="card-icon">
-                <img class="img-icon" src="../../assets/img/buy-comics-shop-locator.png" alt="Shop Locator">
-                <span>COMIC SHOP LOCATOR</span>
-            </div>
-            <div class="card-icon">
-                <img class="img-icon" src="../../assets/img/buy-dc-power-visa.svg" alt="DC Power Visa">
-                <span>DC POWER VISA</span>
+            <div class="card-icon" v-for="item in bannerList">
+                <img class="img-icon" :src="item.img" :alt="item.title">
+                <span>{{ item.title }}</span>
             </div>
         </div>
     </section>
@@ -44,7 +54,14 @@ export default {
         .card-icon {
             display: flex;
             align-items: center;
-            min-width: 15%;
+            min-width: 18%;
+            padding: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba($color: #000000, $alpha: 0.2);
+                border-radius: .625rem;
+            }
 
             .img-icon {
                 max-height: 3.5rem;
