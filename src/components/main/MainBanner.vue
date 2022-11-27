@@ -57,6 +57,7 @@ export default {
             min-width: 18%;
             padding: 1rem;
             cursor: pointer;
+            transition: background 0.5s;
 
             &:hover {
                 background-color: rgba($color: #000000, $alpha: 0.2);
