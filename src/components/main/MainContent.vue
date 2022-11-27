@@ -151,6 +151,12 @@ export default {
             padding: 1rem;
             width: 15%;
             font-weight: bold;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: var(--first-text-color);
+                color: var(--primary-color);
+            }
         }
     }
 }
