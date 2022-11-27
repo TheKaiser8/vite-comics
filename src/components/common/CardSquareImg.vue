@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
+    
     .box-square {
         width: 100%;
         padding-bottom: 100%;
@@ -30,9 +31,12 @@ export default {
             height: 100%;
             object-fit: cover;
             object-position: top;
+            filter: brightness(0.6);
         }
     }
-
+    &:hover .img-square {
+        filter: none;
+    }
     .img-title { 
         font-size: 0.9rem;
         font-weight: 400;

@@ -135,6 +135,7 @@ export default {
         .item {
             width: calc(100% / 6 - 1.75rem);
             margin: .875rem .875rem 3rem;
+            cursor: pointer;
         }
     }
     .btn-box {
