@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <section>
+    <section id="footer-top">
         <div class="container">
             <div class="col">
                 <h4>DC COMICS</h4>
@@ -55,7 +55,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-section {
+#footer-top {
     background-image: url('../../assets/img/footer-bg.jpg');
     background-size: cover;
     color: var(--first-text-color);
@@ -81,6 +81,10 @@ section {
                     text-decoration: none;
                     color: var(--second-text-color);
                     font-size: .875rem;
+                }
+                a:hover {
+                    color: var(--first-text-color);
+                    transition: 0.2s;
                 }
             }
         }
