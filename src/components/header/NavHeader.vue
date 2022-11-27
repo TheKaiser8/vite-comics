@@ -1,22 +1,37 @@
 <script>
 export default {
     name: 'NavHeader',
+    data() {
+        return {
+            currentActiveIndex: 0,
+            mainNavList: [
+                'CHARACTERS',
+                'COMICS',
+                'MOVIES',
+                'TV',
+                'GAMES',
+                'COLLECTIBLES',
+                'VIDEOS',
+                'FAN',
+                'NEWS',
+                'SHOP'
+            ]
+        }
+    },
+    methods: {
+        onClickLinkNav(i) {
+            this.currentActiveIndex = i;
+        }
+    }
 }
 </script>
 
 <template>
     <nav class="main-nav">
         <ul>
-            <li><a href="#">CHARACTERS</a></li>
-            <li><a href="#" class="active">COMICS</a></li>
-            <li><a href="#">MOVIES</a></li>
-            <li><a href="#">TV</a></li>
-            <li><a href="#">GAMES</a></li>
-            <li><a href="#">COLLECTIBLES</a></li>
-            <li><a href="#">VIDEOS</a></li>
-            <li><a href="#">FAN</a></li>
-            <li><a href="#">NEWS</a></li>
-            <li><a href="#">SHOP</a></li>
+            <li v-for="(item, index) in mainNavList" @click="onClickLinkNav(index)">
+                <a href="#" :class="{ active : index === currentActiveIndex }">{{ item }}</a>
+            </li>
         </ul>
     </nav>
 </template>
